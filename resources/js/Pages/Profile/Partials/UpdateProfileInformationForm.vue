@@ -2,6 +2,7 @@
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import Spinner from "@/Components/Spinner.vue";
 import TextInput from '@/Components/TextInput.vue';
 import { Link, useForm, usePage } from '@inertiajs/vue3';
 
@@ -86,10 +87,13 @@ const form = useForm({
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+                <PrimaryButton :disabled="form.processing">
+                    <Spinner class="-ml-1 mr-3" v-if="form.processing"></Spinner>
+                    Salvar
+                </PrimaryButton>
 
                 <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
-                    <p v-if="form.recentlySuccessful" class="text-sm text-neutral-600 dark:text-neutral-400">Saved.</p>
+                    <p v-if="form.recentlySuccessful" class="text-sm text-neutral-600 dark:text-neutral-400">Feito</p>
                 </Transition>
             </div>
         </form>

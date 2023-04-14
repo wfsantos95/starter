@@ -19,9 +19,9 @@ module.exports = {
         },
         colors: {
             ...colors,
-            accent: colors.amber,
-            primary: colors.slate,
-            secondary: colors.sky,
+            accent: colors.violet,
+            primary: colors.gray,
+            secondary: colors.gray,
             success: colors.green,
             danger: colors.red,
             warning: colors.yellow,
